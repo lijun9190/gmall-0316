@@ -1,6 +1,10 @@
 package com.atguigu.gmall.common.bean;
 
 import lombok.Data;
+import org.apache.commons.lang3.builder.ToStringExclude;
+import org.junit.Test;
+
+import java.util.List;
 
 /**
  * 返回数据
@@ -12,6 +16,10 @@ public class ResponseVo<T> {
 	private Integer code;
 	private String msg;
 	private T data;
+
+	public T getData() {
+		return data;
+	}
 
 	public static ResponseVo fail() {
 		ResponseVo responseVo = new ResponseVo();
@@ -40,5 +48,10 @@ public class ResponseVo<T> {
 		responseVo.setMsg("操作成功！");
 		return responseVo;
 	}
+
+
+
+
+
 
 }
